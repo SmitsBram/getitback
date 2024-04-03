@@ -19,7 +19,7 @@ class User extends Authenticatable implements MustVerifyEmail
      */
     protected $fillable = [
         'name', 'email', 'password', 'is_admin', 'bedrijfsnaam', 'straat_en_huisnummer', 
-        'postcode', 'plaats', 'land', 'kvknummer', 'telefoonnummer',
+        'postcode', 'plaats', 'land', 'kvknummer', 'telefoonnummer', 'email_verified_at', // Datum/tijd van e-mailverificatie
     ];
 
     /**
@@ -38,7 +38,7 @@ class User extends Authenticatable implements MustVerifyEmail
      * @var array<string, string>
      */
     protected $casts = [
-        'email_verified_at' => 'datetime',
-        'password' => 'hashed',
+        'email_verified_at' => 'datetime', // Datum/tijd van e-mailverificatie
+        'password' => 'hashed', // Wachtwoord wordt gehashed voordat het wordt opgeslagen
     ];
 }
